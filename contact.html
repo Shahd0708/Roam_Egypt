@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="booking.html">Booking</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="services.html">Our services</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="login.html">Log in</a>
+        </nav>
+
+        <h1 class="page-title">Contact</h1>
+        
+        <div class="contact-wrap">
+
+            <div class="info-card">
+                <h2>Get In Touch</h2>
+                <div class="divider"></div>
+
+                <div class="info-item">
+                    <span class="icon">📍</span>
+                    <p>Aabasya,CS</p>
+                </div>
+
+                <div class="info-item">
+                    <span class="icon">✉️</span>
+                    <p>RoamEgypt@gmail.com</p>
+                </div>
+
+                <div class="info-item">
+                    <span class="icon">📞</span>
+                    <p>0109345960</p>
+                </div>
+
+                <div class="info-item">
+                    <span class="icon">💬</span>
+                    <p>01253549085</p>
+                </div>
+
+                <div class="info-item">
+                    <span class="icon">📷</span>
+                    <p>@RoamEgypt</p>
+                </div>
+            </div>
+
+            <form class="form-card" id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="send-btn">Send Message</button>
+                <p class="powered">Powered by RoamEgypt</p>
+            </form>
+        </div>
+    </div>
+    <div class="custom-popup-overlay" id="popupOverlay">
+        <div class="custom-popup">
+            <h3>RoamEgypt says</h3>
+            <p>Thank you! Your message has been sent.</p>
+            <button id="popupOkBtn">OK</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

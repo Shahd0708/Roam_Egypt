@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+            <a href="booking.html">Booking</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="services.html">Our services</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="login.html">Log in</a>
+    </nav>
+    <div class="container">
+        <h1 class="page-title">Book Your Trip</h1>
+        <form class="booking-form" id="bookingForm">
+            <h2 class="section-title">Choose Your Destination</h2>
+            <div class="destination-grid">
+                <label class="destination-card">
+                    <input type="radio" name="destinations" value="Cairo & Giza" required>
+                    <span class="dest-name">Cairo &amp; Giza</span>
+                </label>
+
+                <label class="destination-card">
+                    <input type="radio" name="destinations" value="Alexandria">
+                    <span class="dest-name">Alexandria</span>
+                </label>
+
+                <label class="destination-card">
+                    <input type="radio" name="destinations" value="Siwa">
+                    <span class="dest-name">Siwa</span>
+                </label>
+
+                <label class="destination-card">
+                    <input type="radio" name="destinations" value="Luxor & Aswan">
+                    <span class="dest-name">Luxor &amp; Aswan</span>
+                </label>
+
+                <label class="destination-card">
+                    <input type="radio" name="destinations" value="Hurghada">
+                    <span class="dest-name">Hurghada</span>
+                </label>
+
+            </div>
+            <h2 class="section-title">Select Date &amp; Travelers</h2>
+
+            <div class="booking-fields">
+                <div class="field-group">
+                    <label for="tripDate">Travel Date</label>
+                    <input type="date" id="tripDate" required>
+                </div>
+
+                <div class="field-group">
+                    <label for="travelers">Number of Travelers</label>
+                    <input type="number" id="travelers" min="1" value="1" required>
+                </div>
+            </div>
+
+            <h2 class="section-title">Your Details</h2>
+
+            <div class="booking-fields">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Phone Number" required>
+            </div>
+
+            <button type="submit" class="send-btn">Confirm Booking</button>
+        </form>
+    </div>
+
+    <div class="custom-popup-overlay" id="popupOverlay">
+        <div class="custom-popup">
+            <h3>RoamEgypt says</h3>
+            <p id="popupMessage">Thank you! Your booking has been received.</p>
+            <button id="popupOkBtn">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
