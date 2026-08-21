@@ -38,8 +38,8 @@ registerForm.addEventListener('submit', function (event_info) {
         return;
     }
 
-    if (password.length < 6) {
-        popup_message("Password must be at least 6 characters!");
+    if (password.length < 5) {
+        popup_message("Password must be at least 5 characters!");
         return;
     }
 
@@ -54,7 +54,7 @@ registerForm.addEventListener('submit', function (event_info) {
         return
     }
 
-    users.push({ name, email, password });
+    users.push({ name, email, password, role: "user" });
     sessionStorage.setItem('users', JSON.stringify(users));
 
     popup_message("Account created sucessfully! You can now log in.");
@@ -82,10 +82,23 @@ loginForm.addEventListener('submit', function (event_info) {
         return;
     }
 
-    if (password.length < 6) {
-        popup_message("Password must be at least 6 characters!");
+    if (password.length < 5) {
+        popup_message("Password must be at least 5 characters!");
         return;
     }
+//admin check
+
+if(email === "admin@roamegypt.com" && password === "admin"){
+    sessionStorage.setItem('logged_in_user', JSON.stringify({
+        email: email,
+        role: "admin"
+    }));
+    popup_message("Welcome, Admin!");
+    setTimeout(function(){window.location.href = "admin.html"}, 2000);
+    return;
+}
+
+
     // check if account exists 
     let users = JSON.parse(sessionStorage.getItem('users')) || [];
     const found_user = users.find(function (user) {
@@ -106,8 +119,6 @@ console.log(found_user)
     popup_message(`Welcome back, ${found_user.name}!`);
     loginForm.reset();
 
-    setTimeout(function(){
-        window.location.href = "index.html"
-    }, 4000)
+    setTimeout(function(){window.location.href = "home.html"}, 2000)
 
 })
